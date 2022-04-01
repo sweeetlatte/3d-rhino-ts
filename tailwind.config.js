@@ -3,7 +3,17 @@ module.exports = {
     // https://tailwindcss.com/docs/just-in-time-mode
     // mode: "jit",
     theme: {
-        extend: {},
+        screens: {
+            "xl": "1366px",
+            // => @media (min-width: 1366px) { ... }
+            "1xl": "1440px",
+            "2xl": "1920px",
+            // => @media (min-width: 1920px) { ... }
+        },
+        fontFamily: {
+            'sans': ['sans-serif'],
+            title: "Playfair Display",
+        },
     },
     variants: {},
     plugins: [],
@@ -15,6 +25,7 @@ module.exports = {
             "./src/**/*.jsx",
             "./src/**/*.ts",
             "./src/**/*.tsx",
+            "./src/**/**/*.tsx",
             "./public/index.html",
         ],
         // Options passed to PurgeCSS
