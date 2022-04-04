@@ -44,4 +44,4 @@ jobs:
               run: yarn
 
             - name: Run lint
-              run: yarn lint
+              run: yarn style:lint

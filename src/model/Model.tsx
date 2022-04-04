@@ -1,8 +1,7 @@
 import React from "react";
-import { useLoader } from "@react-three/fiber";
+import { useLoader, useFrame } from "@react-three/fiber";
 import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import { useFrame } from "@react-three/fiber";
 
 interface Props {
     active: number;

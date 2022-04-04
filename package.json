@@ -3,6 +3,9 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@react-spring/core": "^9.4.4",
+        "@react-spring/three": "^9.4.4",
+        "@react-spring/web": "^9.4.4",
         "@react-three/cannon": "^4.7.0",
         "@react-three/drei": "^8.10.6",
         "@react-three/fiber": "^7.0.26",
@@ -27,8 +30,9 @@
         "web-vitals": "^2.1.0"
     },
     "scripts": {
-        "eslint": "eslint . --ext .ts",
-        "lint": "eslint src/**/*.ts src/**/*.tsx src/**/*.js --fix *.js ",
+        "style:all": "tsc && yarn style:lint && yarn style:prettier",
+        "style:lint": "eslint src/**/**/**/*.{ts,tsx}",
+        "style:prettier": "prettier --check src/**/**/**/*.{js,jsx,ts,tsx}",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
@@ -59,10 +63,13 @@
         "@typescript-eslint/parser": "^5.17.0",
         "eslint": "^8.12.0",
         "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-import": "^2.25.4",
         "eslint-plugin-jsx-a11y": "^6.5.1",
+        "eslint-plugin-prettier": "^4.0.0",
         "eslint-plugin-react": "^7.29.4",
-        "eslint-plugin-react-hooks": "^4.4.0"
+        "eslint-plugin-react-hooks": "^4.4.0",
+        "prettier": "^2.6.2"
     },
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
