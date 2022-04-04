@@ -12,17 +12,17 @@ export default function Scene3({ active, setActive }: Props) {
     return (
         <Html>
             <div
-                className={`bg-[#A9B2A0] w-[43.9vw] h-screen absolute left-[50vw] top-[-50vh] 2xl:px-9 p-6 2xl:py-8`}
+                className="bg-[#A9B2A0] w-[43.9vw] h-screen absolute left-[50vw] top-[-50vh] 2xl:px-9 p-6 2xl:py-8"
                 style={{
                     animation:
                         active === 2 ? "slideLeft 966ms both 1500ms" : "",
                 }}
             >
                 {/* 9.800 -> 11.300: animation xong chính diện = 1500
-                                -> 12.266: animation info bg xong
-                                -> 12.133: 01. rhino hiện ra -> 12.666 xong
-                                11.866 -> 12.866: title xong
-                                11.966 -> 13.700: text xong */}
+                -> 12.266: animation info bg xong
+                -> 12.133: 01. rhino hiện ra -> 12.666 xong
+                11.866 -> 12.866: title xong
+                11.966 -> 13.700: text xong */}
                 <div
                     className="flex justify-between 2xl:text-xl text-sm font-sans 2xl:pb-9 pb-7"
                     style={{

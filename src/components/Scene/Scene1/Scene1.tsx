@@ -62,8 +62,8 @@ export default function Scene1({ z, setZ, delayAnimate }: Props) {
                 <div
                     className={
                         z === 3
-                            ? "wavy w-[86vw] 1xl:w-[81vw]"
-                            : "w-[86vw] 1xl:w-[81vw]"
+                            ? "wavy w-[86vw] 1xl:w-[81vw] 2xl:w-[86vw]"
+                            : "w-[86vw] 1xl:w-[81vw] 2xl:w-[86vw]"
                     }
                 >
                     <span style={{ "--i": 10 } as React.CSSProperties}>T</span>
