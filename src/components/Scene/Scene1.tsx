@@ -1,7 +1,7 @@
 import React from "react";
 import { Html } from "@react-three/drei";
 
-import "./scene1.css";
+import "./scene.css";
 
 interface Props {
     z: number;
@@ -9,7 +9,7 @@ interface Props {
     delayAnimate: () => void;
 }
 
-export default function Scene1({ z, setZ, delayAnimate }: Props) {
+export function Scene1({ z, setZ, delayAnimate }: Props) {
     return (
         <Html scale={1} position={[-7, 1.7, 0]}>
             <div className="text-[160px] 2xl:text-[216px] w-[85.1vw] 1xl:w-[80.1vw] 2xl:w-[86vw] text-white leading-[0.87] 2xl:leading-[0.9] tracking-[-4px] 2xl:tracking-normal">
@@ -39,8 +39,11 @@ export default function Scene1({ z, setZ, delayAnimate }: Props) {
                         —
                     </div>
                     <div
-                        className={z === 3 ? "wavy close" : ""}
-                        style={{ letterSpacing: "-8px" }}
+                        className={
+                            z === 3
+                                ? "wavy close tracking-[-8px]"
+                                : "tracking-[-8px]"
+                        }
                     >
                         <span style={{ "--i": 5 } as React.CSSProperties}>
                             C

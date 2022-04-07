@@ -5,14 +5,13 @@ import { useProgress } from "@react-three/drei";
 
 import "./App.css";
 import "./main.css";
+import "./components/Scene/scene.css";
 
 import Loader from "./components/Loader/Loader";
 import Floor from "./components/Floor/Floor";
 import Model from "./components/model/Model";
 import Light from "./components/Light/Light";
-import Scene1 from "./components/Scene/Scene1/Scene1";
-import Scene2 from "./components/Scene/Scene2/Scene2";
-import Scene3 from "./components/Scene/Scene3/Scene3";
+import { Scene1, Scene2, Scene3 } from "./components/Scene";
 
 export default function App() {
     const { active: activeProgress, progress } = useProgress();
@@ -52,15 +51,10 @@ export default function App() {
 
     return (
         <>
-            <div className="App" style={{ backgroundColor: "black" }}>
+            <div className="App bg-black">
                 <div
-                    className="text-xs 2xl:text-[17px]"
+                    className="text-xs 2xl:text-[17px] font-sans text-white absolute left-[48.15vw] top-[3vh]"
                     style={{
-                        fontFamily: "sans-serif",
-                        color: "white",
-                        position: "absolute",
-                        left: "48.15vw",
-                        top: "3vh",
                         animation:
                             z === 3
                                 ? "reverse-transformReverse 466ms both 334ms"

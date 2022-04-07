@@ -20,7 +20,7 @@
     "no-console": "error", // no console statements allowed
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": ["off"],
-    "react/jsx-filename-extension": [1, { "allow": "as-needed", "extensions": [".ts", ".tsx"] }],
+    "react/jsx-filename-extension": [1, { "allow": "as-needed", "extensions": [".tsx"] }],
     "import/no-extraneous-dependencies": ["error", {"devDependencies": false, "optionalDependencies": false, "peerDependencies": false}], // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-extraneous-dependencies.md
     "prettier/prettier": "off" // don't show prettier errors as it will be fixed when saved anyway
   },
