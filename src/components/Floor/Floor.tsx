@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function Floor(props: Props) {
-    const name = (type: string) => `Marble016_1K_${type}.jpg`;
+    const getMarbleName = (type: string) => `Marble016_1K_${type}.jpg`;
 
     const { active } = props;
 
@@ -21,11 +21,11 @@ export default function Floor(props: Props) {
 
     const [colorMap, displacementMap, normalMap, roughnessMap, aoMap] =
         useLoader(TextureLoader, [
-            name("Color"),
-            name("Displacement"),
-            name("Normal"),
-            name("Roughness"),
-            name("AmbientOcclusion"),
+            getMarbleName("Color"),
+            getMarbleName("Displacement"),
+            getMarbleName("Normal"),
+            getMarbleName("Roughness"),
+            getMarbleName("AmbientOcclusion"),
         ]);
 
     const { spring } = useSpring({
