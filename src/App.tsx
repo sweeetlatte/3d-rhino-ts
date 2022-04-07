@@ -6,22 +6,22 @@ import { useProgress } from "@react-three/drei";
 import "./App.css";
 import "./main.css";
 
-import Loader from "./utils/Loader/Loader";
+import Loader from "./components/Loader/Loader";
 import Floor from "./components/Floor/Floor";
-import Model from "./model/Model";
+import Model from "./components/model/Model";
 import Light from "./components/Light/Light";
 import Scene1 from "./components/Scene/Scene1/Scene1";
 import Scene2 from "./components/Scene/Scene2/Scene2";
 import Scene3 from "./components/Scene/Scene3/Scene3";
 
 export default function App() {
-    const { active: abc, progress } = useProgress();
-    const [i, seti] = useState(0);
-    function count() {
-        if (progress === 100 && i < 2) {
-            seti(i + 1);
+    const { active: activeProgress, progress } = useProgress();
+    const [count, setCount] = useState(0);
+    function countProgress() {
+        if (progress === 100 && count < 2) {
+            setCount(count + 1);
             return false;
-        } else if (i >= 2) return true;
+        } else if (count >= 2) return true;
         return false;
     }
 
@@ -79,7 +79,7 @@ export default function App() {
                     }}
                     shadows
                 >
-                    {count() && (
+                    {countProgress() && (
                         <mesh>
                             <Scene1
                                 z={z}
@@ -119,7 +119,7 @@ export default function App() {
                     </Suspense>
                 </Canvas>
             </div>
-            <Loader active={abc} progress={progress} />
+            <Loader active={activeProgress} progress={progress} />
         </>
     );
 }
