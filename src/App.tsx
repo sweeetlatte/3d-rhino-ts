@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
 import { useProgress } from "@react-three/drei";
@@ -15,14 +15,13 @@ import { Scene1, Scene2, Scene3 } from "./components/Scene";
 
 export default function App() {
     const { active: activeProgress, progress } = useProgress();
-    const [count, setCount] = useState(0);
-    function countProgress() {
-        if (progress === 100 && count < 2) {
-            setCount(count + 1);
-            return false;
-        } else if (count >= 2) return true;
-        return false;
-    }
+    let count = useRef(0);
+
+    useEffect(() => {
+        if (progress === 100 && count.current < 2) {
+            count.current += 1;
+        }
+    }, [progress]);
 
     const [active, setActive] = useState(0);
     const [z, setZ] = useState(1);
@@ -73,7 +72,7 @@ export default function App() {
                     }}
                     shadows
                 >
-                    {countProgress() && (
+                    {count.current === 2 && (
                         <mesh>
                             <Scene1
                                 z={z}
