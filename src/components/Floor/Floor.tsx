@@ -44,7 +44,7 @@ export default function Floor(props: Props) {
     return (
         <a.group>
             <a.mesh rotation-y={rotation} position-z={scale}>
-                <mesh ref={ref} receiveShadow>
+                <mesh ref={ref as any} receiveShadow>
                     <planeGeometry args={[100, 100]} />
                     <meshStandardMaterial
                         displacementScale={0.2}
