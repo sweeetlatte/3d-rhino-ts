@@ -1,5 +1,6 @@
 import React from "react";
-import { a as b, useTransition } from "@react-spring/web";
+import { a as b } from "@react-spring/web";
+import { useTransition } from "@react-spring/core";
 
 import "./loader.css";
 
@@ -25,6 +26,6 @@ export default function Loader({ active, progress }: Props) {
                         ></b.div>
                     </div>
                 </b.div>
-            )
+            ),
     );
 }
