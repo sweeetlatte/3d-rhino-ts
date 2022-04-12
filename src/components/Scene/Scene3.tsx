@@ -1,5 +1,6 @@
-import React from "react";
+/** @jsxImportSource @emotion/react */
 import { Html } from "@react-three/drei";
+import { Flex } from "theme-ui";
 
 import "./scene.css";
 
@@ -12,10 +13,19 @@ export function Scene3({ active, setActive }: Props) {
     return (
         <Html>
             <div
-                className="bg-[#A9B2A0] w-[43.9vw] h-screen absolute left-[50vw] top-[-50vh] 2xl:px-9 p-6 2xl:py-8"
-                style={{
+                css={{
                     animation:
                         active === 2 ? "slideLeft 966ms both 1500ms" : "",
+                    backgroundColor: "#A9B2A0",
+                    width: "43.9vw",
+                    height: "100vh",
+                    position: "absolute",
+                    left: "50vw",
+                    top: "-50vh",
+                    padding: "1.5rem",
+                    "@media screen and (min-width: 1920px)": {
+                        padding: "2.25rem 2rem",
+                    },
                 }}
             >
                 {/* 9.800 -> 11.300: animation xong chính diện = 1500
@@ -23,85 +33,136 @@ export function Scene3({ active, setActive }: Props) {
                 -> 12.133: 01. rhino hiện ra -> 12.666 xong
                 11.866 -> 12.866: title xong
                 11.966 -> 13.700: text xong */}
-                <div className="flex justify-between 2xl:text-xl text-sm font-sans 2xl:pb-9 pb-7 border-b border-black border-solid">
+                <Flex
+                    sx={{
+                        justifyContent: "space-between",
+                        fontSize: "0.875rem",
+                        fontFamily: "sans-serif",
+                        borderBottom: "1px solid black",
+                        paddingBottom: "1.75rem",
+                        "@media screen and (min-width: 1920px)": {
+                            fontSize: "1.25rem",
+                            paddingBottom: "2.25rem",
+                        },
+                    }}
+                >
                     <div
-                        className={
-                            active === 2
-                                ? "animate_transform_533ms_both_2333ms"
-                                : ""
-                        }
+                        css={{
+                            animation:
+                                active === 2
+                                    ? "transform 533ms both 2333ms"
+                                    : "",
+                        }}
                     >
                         01. Rhino Horn
                     </div>
                     <div
-                        className={
-                            active === 2
-                                ? "animate_transform_533ms_both_2599ms"
-                                : ""
-                        }
+                        css={{
+                            animation:
+                                active === 2
+                                    ? "transform 533ms both 2599ms"
+                                    : "",
+                        }}
                         onClick={() => {
                             setActive(3);
                         }}
                     >
                         Close
                     </div>
-                </div>
-                <div className="2xl:px-[5.5rem] pl-[4.2rem] 2xl:pt-[15.5vh] pt-[15vh] text-left">
+                </Flex>
+                <div
+                    css={{
+                        paddingLeft: "4.2rem",
+                        paddingTop: "15vh",
+                        textAlign: "left",
+                        "@media screen and (min-width: 1920px)": {
+                            paddingLeft: "5.5rem",
+                            paddingRight: "5.5rem",
+                            paddingTop: "15.5vh",
+                        },
+                    }}
+                >
                     <div
-                        className={
-                            active === 2
-                                ? "font-title 2xl:text-[100px] text-[70px] 2xl:leading-[5.75rem] leading-[4.1rem] text-slide-left 2xl:tracking-[-3px] tracking-[-1px]"
-                                : "font-title 2xl:text-[100px] text-[70px] 2xl:leading-[6.75rem] leading-[4.1rem] 2xl:tracking-[-3px] tracking-[-1px]"
-                        }
+                        className={active === 2 ? "text-slide-left" : ""}
+                        css={{
+                            fontSize: "70px",
+                            lineHeight: "4.1rem",
+                            letterSpacing: "-1px",
+                            fontFamily: "PlayfairDisplay",
+                            "@media screen and (min-width: 1920px)": {
+                                fontSize: "100px",
+                                lineHeight: "5.75rem",
+                                letterSpacing: "-3px",
+                            },
+                        }}
                     >
-                        <span style={{ "--i": 0 } as React.CSSProperties}>
-                            THERE ARE 5&nbsp;
-                        </span>
-                        <span style={{ "--i": 1 } as React.CSSProperties}>
-                            SPECIES OF&nbsp;
-                        </span>
-                        <span style={{ "--i": 2 } as React.CSSProperties}>
-                            RHINO...
-                        </span>
+                        <span css={{ "--i": 0 }}>THERE ARE 5&nbsp;</span>
+                        <span css={{ "--i": 1 }}>SPECIES OF&nbsp;</span>
+                        <span css={{ "--i": 2 }}>RHINO...</span>
                     </div>
                     <div
-                        className={
-                            active === 2
-                                ? "font-sans 2xl:text-xl text-sm 2xl:pt-[4.2rem] pt-12 text-slide-left tracking-[-0.4px] leading-[1.8]"
-                                : "font-sans 2xl:text-xl text-sm 2xl:pt-[4.2rem] pt-12 tracking-[-0.4px] leading-[1.8]"
-                        }
+                        className={active === 2 ? "text-slide-left" : ""}
+                        css={{
+                            fontFamily: "sans-serif",
+                            fontSize: "0.875rem",
+                            paddingTop: "3rem",
+                            letterSpacing: "-0.4px",
+                            lineHeight: 1.8,
+                            "@media screen and (min-width: 1920px)": {
+                                fontSize: "1.25rem",
+                                paddingTop: "4.2rem",
+                            },
+                        }}
                     >
-                        <span style={{ "--i": 3 } as React.CSSProperties}>
+                        <span css={{ "--i": 3 }}>
                             ...Two African – black and white rhinos – and three
                             Asian – greater&nbsp;
                         </span>
-                        <span style={{ "--i": 3.5 } as React.CSSProperties}>
+                        <span css={{ "--i": 3.5 }}>
                             one-horned, Sumatran and Javan rhinos. Three of
                             these (black,&nbsp;
                         </span>
-                        <span style={{ "--i": 4 } as React.CSSProperties}>
+                        <span css={{ "--i": 4 }}>
                             Sumatran and Javan) are listed as ‘critically
                             endangered’ by IUCN&nbsp;
                         </span>
-                        <span style={{ "--i": 4.5 } as React.CSSProperties}>
+                        <span css={{ "--i": 4.5 }}>
                             – there are thought to be fewer than 70 Javan and
                             100 Sumatran&nbsp;
                         </span>
-                        <span style={{ "--i": 5 } as React.CSSProperties}>
+                        <span css={{ "--i": 5 }}>
                             rhinos left in the wild, meaning their populations
                             are truly&nbsp;
                         </span>
-                        <span style={{ "--i": 5.5 } as React.CSSProperties}>
+                        <span css={{ "--i": 5.5 }}>
                             under threat of extinction.&nbsp;
                         </span>
                     </div>
                 </div>
-                <div className="flex items-end justify-between font-sans pt-[15vh]">
+                <Flex
+                    sx={{
+                        alignItems: "end",
+                        justifyContent: "space-between",
+                        fontFamily: "sans-serif",
+                        paddingTop: "18vh",
+                    }}
+                >
                     <div>02</div>
-                    <div className="border border-black rounded-[50px] 2xl:py-3 py-2 px-7 2xl:px-11 2xl:text-[27px] text-xl">
+                    <div
+                        css={{
+                            border: "1px solid black",
+                            borderRadius: "50px",
+                            fontSize: "1.25rem",
+                            padding: "0.5rem 1.75rem", //py px
+                            "@media screen and (min-width: 1920px)": {
+                                padding: "0.75rem 2.75rem",
+                                fontSize: "27px",
+                            },
+                        }}
+                    >
                         NEXT FACT
                     </div>
-                </div>
+                </Flex>
             </div>
         </Html>
     );

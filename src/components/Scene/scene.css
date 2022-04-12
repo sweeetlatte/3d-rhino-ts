@@ -1,3 +1,8 @@
+@font-face {
+    font-family: PlayfairDisplay;
+    src: url(../../assets/PlayfairDisplay.ttf);
+}
+
 button:hover {
     background-color: white;
     color: black;
