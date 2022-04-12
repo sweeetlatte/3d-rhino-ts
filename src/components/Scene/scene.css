@@ -93,6 +93,26 @@ button:hover {
     }
 }
 
+.dot {
+    animation: transform 167ms ease-out both var(--delay);
+    cursor: none;
+    background-color: white;
+    border-radius: 9999px;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.dot:hover {
+    width: 36px;
+    height: 36px;
+}
+
 .dot > div {
     display: none;
 }
@@ -109,6 +129,16 @@ button:hover {
     display: block;
     animation: transform 0.3s ease-out;
     animation-fill-mode: both;
+}
+
+.title-of-dot {
+    color: white;
+    font-size: 17px;
+    width: max-content;
+    position: absolute;
+    left: -3vw;
+    top: 43vh;
+    font-family: sans-serif;
 }
 
 @keyframes reverse-transformReverse {
