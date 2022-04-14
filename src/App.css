@@ -11,5 +11,5 @@ body {
 }
 
 .custom {
-  cursor: url(sparkcr.png), auto;
+  cursor: url(./assets/sparkcr.png), auto;
 }
