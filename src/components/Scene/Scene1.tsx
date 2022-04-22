@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+/** @jsxImportSource theme-ui */
 import { Html } from "@react-three/drei";
 import { Box, Flex } from "theme-ui";
 
@@ -16,16 +16,17 @@ export function Scene1({ z, setZ, delayAnimate }: Props) {
             <Box
                 sx={{
                     fontSize: "160px",
-                    width: "85.1vw",
+                    // width: "85.1vw",
+                    width: ["85.1vw", "80.1vw", "86vw"],
                     color: "white",
                     lineHeight: 0.87,
                     letterSpacing: "-4px",
                     "@media screen and (min-width: 1440px)": {
-                        width: "80.1vw",
+                        // width: "80.1vw",
                     },
                     "@media screen and (min-width: 1920px)": {
                         fontSize: "216px",
-                        width: "86vw",
+                        // width: "86vw",
                         lineHeight: 0.9,
                         letterSpacing: "0px",
                     },
@@ -37,29 +38,29 @@ export function Scene1({ z, setZ, delayAnimate }: Props) {
                     1600: start wavy
                     2333: i letter disapear */}
                     <div className={z === 3 ? "wavy close-reverse" : ""}>
-                        <span css={{ "--i": 5 }}>R</span>
-                        <span css={{ "--i": 1 }}>H</span>
-                        <span css={{ "--i": 0 }}>I</span>
-                        <span css={{ "--i": 1 }}>N</span>
-                        <span css={{ "--i": 5 }}>O</span>
+                        <span sx={{ "--i": 5 }}>R</span>
+                        <span sx={{ "--i": 1 }}>H</span>
+                        <span sx={{ "--i": 0 }}>I</span>
+                        <span sx={{ "--i": 1 }}>N</span>
+                        <span sx={{ "--i": 5 }}>O</span>
                     </div>
                     <div className={z === 3 ? "dash shorten-dash" : "dash"}>
                         —
                     </div>
                     <div
                         className={z === 3 ? "wavy close" : ""}
-                        css={{ letterSpacing: "-8px" }}
+                        sx={{ letterSpacing: "-8px" }}
                     >
-                        <span css={{ "--i": 5 }}>C</span>
-                        <span css={{ "--i": 2 }}>L</span>
-                        <span css={{ "--i": 1 }}>O</span>
-                        <span css={{ "--i": 2 }}>S</span>
-                        <span css={{ "--i": 5 }}>E</span>
+                        <span sx={{ "--i": 5 }}>C</span>
+                        <span sx={{ "--i": 2 }}>L</span>
+                        <span sx={{ "--i": 1 }}>O</span>
+                        <span sx={{ "--i": 2 }}>S</span>
+                        <span sx={{ "--i": 5 }}>E</span>
                     </div>
                 </Flex>
                 <div
                     className={z === 3 ? "wavy" : ""}
-                    css={{
+                    sx={{
                         width: "86vw",
                         "@media screen and (min-width: 1440px)": {
                             width: "81vw",
@@ -69,24 +70,24 @@ export function Scene1({ z, setZ, delayAnimate }: Props) {
                         },
                     }}
                 >
-                    <span css={{ "--i": 10 }}>T</span>
-                    <span css={{ "--i": 8 }}>O</span>
-                    <span css={{ "--i": 8 }}>&nbsp;</span>
-                    <span css={{ "--i": 7 }}>E</span>
-                    <span css={{ "--i": 6 }}>X</span>
-                    <span css={{ "--i": 5 }}>T</span>
-                    <span css={{ "--i": 3 }}>I</span>
-                    <span css={{ "--i": 5 }}>N</span>
-                    <span css={{ "--i": 6 }}>C</span>
-                    <span css={{ "--i": 7 }}>T</span>
-                    <span css={{ "--i": 5 }}>I</span>
-                    <span css={{ "--i": 8 }}>O</span>
-                    <span css={{ "--i": 10 }}>N</span>
+                    <span sx={{ "--i": 10 }}>T</span>
+                    <span sx={{ "--i": 8 }}>O</span>
+                    <span sx={{ "--i": 8 }}>&nbsp;</span>
+                    <span sx={{ "--i": 7 }}>E</span>
+                    <span sx={{ "--i": 6 }}>X</span>
+                    <span sx={{ "--i": 5 }}>T</span>
+                    <span sx={{ "--i": 3 }}>I</span>
+                    <span sx={{ "--i": 5 }}>N</span>
+                    <span sx={{ "--i": 6 }}>C</span>
+                    <span sx={{ "--i": 7 }}>T</span>
+                    <span sx={{ "--i": 5 }}>I</span>
+                    <span sx={{ "--i": 8 }}>O</span>
+                    <span sx={{ "--i": 10 }}>N</span>
                 </div>
             </Box>
             <div
                 className={z === 3 ? "wavy" : ""}
-                css={{
+                sx={{
                     marginTop: "12.1vh",
                     marginLeft: "3vw",
                     "@media screen and (min-width: 1440px)": {
@@ -100,7 +101,7 @@ export function Scene1({ z, setZ, delayAnimate }: Props) {
             >
                 <div
                     className="btn"
-                    css={{
+                    sx={{
                         "--i": 2,
                         fontSize: "22px",
                         width: "max-content",

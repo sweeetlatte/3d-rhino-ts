@@ -1,4 +1,5 @@
-import React, { useState, useEffect, Suspense, useRef } from "react";
+/** @jsxImportSource theme-ui */
+import { useState, useEffect, Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
 import { useProgress } from "@react-three/drei";
@@ -50,7 +51,12 @@ export default function Home() {
 
     return (
         <>
-            <div className="App bg-black">
+            <div
+                className="App"
+                sx={{
+                    backgroundColor: "black",
+                }}
+            >
                 <div
                     className="text-xs 2xl:text-[17px] font-sans text-white absolute left-[48.15vw] top-[3vh]"
                     style={{
