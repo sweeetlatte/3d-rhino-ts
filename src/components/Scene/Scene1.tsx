@@ -1,5 +1,4 @@
 /** @jsxImportSource theme-ui */
-import { Html } from "@react-three/drei";
 import { Box, Flex } from "theme-ui";
 
 import "./scene.css";
@@ -12,24 +11,14 @@ interface Props {
 
 export function Scene1({ z, setZ, delayAnimate }: Props) {
     return (
-        <Html scale={1} position={[-7, 1.7, 0]}>
+        <>
             <Box
                 sx={{
-                    fontSize: "160px",
-                    // width: "85.1vw",
+                    fontSize: ["160px", null, "216px"],
                     width: ["85.1vw", "80.1vw", "86vw"],
                     color: "white",
-                    lineHeight: 0.87,
-                    letterSpacing: "-4px",
-                    "@media screen and (min-width: 1440px)": {
-                        // width: "80.1vw",
-                    },
-                    "@media screen and (min-width: 1920px)": {
-                        fontSize: "216px",
-                        // width: "86vw",
-                        lineHeight: 0.9,
-                        letterSpacing: "0px",
-                    },
+                    lineHeight: [0.87, null, 0.9],
+                    letterSpacing: ["-4px", null, "0px"],
                 }}
             >
                 <Flex sx={{ justifyContent: "space-between" }}>
@@ -61,13 +50,7 @@ export function Scene1({ z, setZ, delayAnimate }: Props) {
                 <div
                     className={z === 3 ? "wavy" : ""}
                     sx={{
-                        width: "86vw",
-                        "@media screen and (min-width: 1440px)": {
-                            width: "81vw",
-                        },
-                        "@media screen and (min-width: 1920px)": {
-                            width: "86vw",
-                        },
+                        width: ["86vw", "81vw", "86vw"],
                     }}
                 >
                     <span sx={{ "--i": 10 }}>T</span>
@@ -88,29 +71,18 @@ export function Scene1({ z, setZ, delayAnimate }: Props) {
             <div
                 className={z === 3 ? "wavy" : ""}
                 sx={{
-                    marginTop: "12.1vh",
-                    marginLeft: "3vw",
-                    "@media screen and (min-width: 1440px)": {
-                        marginLeft: 0,
-                    },
-                    "@media screen and (min-width: 1920px)": {
-                        marginTop: "12.7vh",
-                        marginLeft: "2vw",
-                    },
+                    marginTop: ["12.1vh", null, "12.7vh"],
+                    marginLeft: ["3vw", 0, "2vw"],
                 }}
             >
                 <div
                     className="btn"
                     sx={{
                         "--i": 2,
-                        fontSize: "22px",
+                        fontSize: ["22px", null, "27px"],
                         width: "max-content",
                         margin: "auto",
-                        padding: "5px 33px",
-                        "@media screen and (min-width: 1920px)": {
-                            fontSize: "27px",
-                            padding: "8px 56px",
-                        },
+                        padding: ["5px 33px", "8px 56px"],
                     }}
                     onClick={() => {
                         setZ(3);
@@ -120,6 +92,6 @@ export function Scene1({ z, setZ, delayAnimate }: Props) {
                     EXPLORE
                 </div>
             </div>
-        </Html>
+        </>
     );
 }

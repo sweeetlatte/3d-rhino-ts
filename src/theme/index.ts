@@ -7,7 +7,7 @@ const makeTheme = <ExactTheme extends Theme>(t: ExactTheme): ExactTheme => {
 };
 
 const theme = makeTheme({
-    breakpoints: ["42em", "56em", "64em"],
+    breakpoints: ["1440px", "1920px", "1366px"],
 });
 
 export default theme;

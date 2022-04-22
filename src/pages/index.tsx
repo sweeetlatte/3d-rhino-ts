@@ -2,11 +2,13 @@
 import { useState, useEffect, Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
-import { useProgress } from "@react-three/drei";
+import { Html, useProgress } from "@react-three/drei";
+import { ThemeProvider } from "theme-ui";
 
 import "../App.css";
 import "../main.css";
 import "../components/Scene/scene.css";
+import theme from "../theme";
 
 import Loader from "../components/Loader/Loader";
 import Floor from "../components/Floor/Floor";
@@ -58,12 +60,17 @@ export default function Home() {
                 }}
             >
                 <div
-                    className="text-xs 2xl:text-[17px] font-sans text-white absolute left-[48.15vw] top-[3vh]"
-                    style={{
+                    sx={{
                         animation:
                             z === 3
                                 ? "reverse-transformReverse 466ms both 334ms"
                                 : "",
+                        fontSize: ["12px", null, "17px"],
+                        fontFamily: "sans-serif",
+                        color: "white",
+                        position: "absolute",
+                        left: "48.15vw",
+                        top: "3vh",
                     }}
                 >
                     Endangered
@@ -80,23 +87,29 @@ export default function Home() {
                 >
                     {count.current === 2 && (
                         <mesh>
-                            <Scene1
-                                z={z}
-                                setZ={setZ}
-                                delayAnimate={delayAnimate}
-                            />
+                            <Html scale={1} position={[-7, 1.7, 0]}>
+                                <ThemeProvider theme={theme}>
+                                    <Scene1
+                                        z={z}
+                                        setZ={setZ}
+                                        delayAnimate={delayAnimate}
+                                    />
+                                </ThemeProvider>
+                            </Html>
                         </mesh>
                     )}
                     <mesh>
-                        <Scene2
-                            display={display}
-                            reverse={reverse}
-                            setReverse={setReverse}
-                            setActive={setActive}
-                        />
-                    </mesh>
-                    <mesh>
-                        <Scene3 active={active} setActive={setActive} />
+                        <Html>
+                            <ThemeProvider theme={theme}>
+                                <Scene2
+                                    display={display}
+                                    reverse={reverse}
+                                    setReverse={setReverse}
+                                    setActive={setActive}
+                                />
+                                <Scene3 active={active} setActive={setActive} />
+                            </ThemeProvider>
+                        </Html>
                     </mesh>
                     <Suspense fallback={null}>
                         <mesh position={[0.2, -1.5, 3]}>
