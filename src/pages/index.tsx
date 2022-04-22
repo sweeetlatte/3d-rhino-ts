@@ -2,13 +2,11 @@
 import { useState, useEffect, Suspense, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/cannon";
-import { Html, useProgress } from "@react-three/drei";
-import { ThemeProvider } from "theme-ui";
+import { useProgress } from "@react-three/drei";
 
 import "../App.css";
 import "../main.css";
 import "../components/Scene/scene.css";
-import theme from "../theme";
 
 import Loader from "../components/Loader/Loader";
 import Floor from "../components/Floor/Floor";
@@ -87,29 +85,23 @@ export default function Home() {
                 >
                     {count.current === 2 && (
                         <mesh>
-                            <Html scale={1} position={[-7, 1.7, 0]}>
-                                <ThemeProvider theme={theme}>
-                                    <Scene1
-                                        z={z}
-                                        setZ={setZ}
-                                        delayAnimate={delayAnimate}
-                                    />
-                                </ThemeProvider>
-                            </Html>
+                            <Scene1
+                                z={z}
+                                setZ={setZ}
+                                delayAnimate={delayAnimate}
+                            />
                         </mesh>
                     )}
                     <mesh>
-                        <Html>
-                            <ThemeProvider theme={theme}>
-                                <Scene2
-                                    display={display}
-                                    reverse={reverse}
-                                    setReverse={setReverse}
-                                    setActive={setActive}
-                                />
-                                <Scene3 active={active} setActive={setActive} />
-                            </ThemeProvider>
-                        </Html>
+                        <Scene2
+                            display={display}
+                            reverse={reverse}
+                            setReverse={setReverse}
+                            setActive={setActive}
+                        />
+                    </mesh>
+                    <mesh>
+                        <Scene3 active={active} setActive={setActive} />
                     </mesh>
                     <Suspense fallback={null}>
                         <mesh position={[0.2, -1.5, 3]}>
