@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+/** @jsxImportSource theme-ui */
 import { Html } from "@react-three/drei";
 import { Flex } from "theme-ui";
 
@@ -13,7 +13,7 @@ export function Scene3({ active, setActive }: Props) {
     return (
         <Html>
             <div
-                css={{
+                sx={{
                     animation:
                         active === 2 ? "slideLeft 966ms both 1500ms" : "",
                     backgroundColor: "#A9B2A0",
@@ -47,7 +47,7 @@ export function Scene3({ active, setActive }: Props) {
                     }}
                 >
                     <div
-                        css={{
+                        sx={{
                             animation:
                                 active === 2
                                     ? "transform 533ms both 2333ms"
@@ -57,7 +57,7 @@ export function Scene3({ active, setActive }: Props) {
                         01. Rhino Horn
                     </div>
                     <div
-                        css={{
+                        sx={{
                             animation:
                                 active === 2
                                     ? "transform 533ms both 2599ms"
@@ -71,7 +71,7 @@ export function Scene3({ active, setActive }: Props) {
                     </div>
                 </Flex>
                 <div
-                    css={{
+                    sx={{
                         paddingLeft: "4.2rem",
                         paddingTop: "15vh",
                         textAlign: "left",
@@ -84,7 +84,7 @@ export function Scene3({ active, setActive }: Props) {
                 >
                     <div
                         className={active === 2 ? "text-slide-left" : ""}
-                        css={{
+                        sx={{
                             fontSize: "70px",
                             lineHeight: "4.1rem",
                             letterSpacing: "-1px",
@@ -96,13 +96,13 @@ export function Scene3({ active, setActive }: Props) {
                             },
                         }}
                     >
-                        <span css={{ "--i": 0 }}>THERE ARE 5&nbsp;</span>
-                        <span css={{ "--i": 1 }}>SPECIES OF&nbsp;</span>
-                        <span css={{ "--i": 2 }}>RHINO...</span>
+                        <span sx={{ "--i": 0 }}>THERE ARE 5&nbsp;</span>
+                        <span sx={{ "--i": 1 }}>SPECIES OF&nbsp;</span>
+                        <span sx={{ "--i": 2 }}>RHINO...</span>
                     </div>
                     <div
                         className={active === 2 ? "text-slide-left" : ""}
-                        css={{
+                        sx={{
                             fontFamily: "sans-serif",
                             fontSize: "0.875rem",
                             paddingTop: "3rem",
@@ -114,27 +114,27 @@ export function Scene3({ active, setActive }: Props) {
                             },
                         }}
                     >
-                        <span css={{ "--i": 3 }}>
+                        <span sx={{ "--i": 3 }}>
                             ...Two African – black and white rhinos – and three
                             Asian – greater&nbsp;
                         </span>
-                        <span css={{ "--i": 3.5 }}>
+                        <span sx={{ "--i": 3.5 }}>
                             one-horned, Sumatran and Javan rhinos. Three of
                             these (black,&nbsp;
                         </span>
-                        <span css={{ "--i": 4 }}>
+                        <span sx={{ "--i": 4 }}>
                             Sumatran and Javan) are listed as ‘critically
                             endangered’ by IUCN&nbsp;
                         </span>
-                        <span css={{ "--i": 4.5 }}>
+                        <span sx={{ "--i": 4.5 }}>
                             – there are thought to be fewer than 70 Javan and
                             100 Sumatran&nbsp;
                         </span>
-                        <span css={{ "--i": 5 }}>
+                        <span sx={{ "--i": 5 }}>
                             rhinos left in the wild, meaning their populations
                             are truly&nbsp;
                         </span>
-                        <span css={{ "--i": 5.5 }}>
+                        <span sx={{ "--i": 5.5 }}>
                             under threat of extinction.&nbsp;
                         </span>
                     </div>
@@ -144,12 +144,12 @@ export function Scene3({ active, setActive }: Props) {
                         alignItems: "end",
                         justifyContent: "space-between",
                         fontFamily: "sans-serif",
-                        paddingTop: "18vh",
+                        paddingTop: "15vh",
                     }}
                 >
                     <div>02</div>
                     <div
-                        css={{
+                        sx={{
                             border: "1px solid black",
                             borderRadius: "50px",
                             fontSize: "1.25rem",

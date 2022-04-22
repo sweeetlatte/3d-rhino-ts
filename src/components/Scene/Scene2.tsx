@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+/** @jsxImportSource theme-ui */
 import { Html } from "@react-three/drei";
 
 import "./scene.css";
@@ -15,7 +15,7 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
         <Html>
             <div className={`${display}`}>
                 <div
-                    css={{
+                    sx={{
                         color: "white",
                         fontSize: "17px",
                         width: "max-content",
@@ -42,7 +42,7 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
                 >
                     <div
                         className="dot"
-                        css={{
+                        sx={{
                             "--delay": "900ms",
                             top: "3.4rem",
                             left: "-18.9rem",
@@ -66,7 +66,7 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
                 <div className="dot-hover">
                     <div
                         className="dot"
-                        css={{
+                        sx={{
                             "--delay": "1066ms",
                             top: "-7.75rem",
                             left: "-9rem",
@@ -93,7 +93,7 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
                 <div className="dot-hover">
                     <div
                         className="dot"
-                        css={{
+                        sx={{
                             "--delay": "1232ms",
                             top: "-1.75rem",
                             left: "3.75rem",
@@ -122,7 +122,7 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
                 >
                     <div
                         className="dot"
-                        css={{
+                        sx={{
                             "--delay": "1398ms",
                             top: "-14.5rem",
                             left: "25.5rem",
