@@ -58,12 +58,17 @@ export default function Home() {
                 }}
             >
                 <div
-                    className="text-xs 2xl:text-[17px] font-sans text-white absolute left-[48.15vw] top-[3vh]"
-                    style={{
+                    sx={{
                         animation:
                             z === 3
                                 ? "reverse-transformReverse 466ms both 334ms"
                                 : "",
+                        fontSize: ["12px", null, "17px"],
+                        fontFamily: "sans-serif",
+                        color: "white",
+                        position: "absolute",
+                        left: "48.15vw",
+                        top: "3vh",
                     }}
                 >
                     Endangered

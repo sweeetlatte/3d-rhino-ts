@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
-import { Html } from "@react-three/drei";
 import { Flex } from "theme-ui";
+import CanvasHtmlWithThemeProvider from "../../containers/CanvasHtmlWithThemeProvider";
 
 import "./scene.css";
 
@@ -11,7 +11,7 @@ interface Props {
 
 export function Scene3({ active, setActive }: Props) {
     return (
-        <Html>
+        <CanvasHtmlWithThemeProvider>
             <div
                 sx={{
                     animation:
@@ -22,10 +22,7 @@ export function Scene3({ active, setActive }: Props) {
                     position: "absolute",
                     left: "50vw",
                     top: "-50vh",
-                    padding: "1.5rem",
-                    "@media screen and (min-width: 1920px)": {
-                        padding: "2.25rem 2rem",
-                    },
+                    padding: ["1.5rem", null, "2.25rem 2rem"],
                 }}
             >
                 {/* 9.800 -> 11.300: animation xong chính diện = 1500
@@ -36,14 +33,10 @@ export function Scene3({ active, setActive }: Props) {
                 <Flex
                     sx={{
                         justifyContent: "space-between",
-                        fontSize: "0.875rem",
+                        fontSize: ["0.875rem", null, "1.25rem"],
                         fontFamily: "sans-serif",
                         borderBottom: "1px solid black",
-                        paddingBottom: "1.75rem",
-                        "@media screen and (min-width: 1920px)": {
-                            fontSize: "1.25rem",
-                            paddingBottom: "2.25rem",
-                        },
+                        paddingBottom: ["1.75rem", null, "2.25rem"],
                     }}
                 >
                     <div
@@ -72,28 +65,19 @@ export function Scene3({ active, setActive }: Props) {
                 </Flex>
                 <div
                     sx={{
-                        paddingLeft: "4.2rem",
-                        paddingTop: "15vh",
+                        paddingLeft: ["4.2rem", null, "5.5rem"],
+                        paddingRight: [null, null, "5.5rem"],
+                        paddingTop: ["15vh", null, "15.5vh"],
                         textAlign: "left",
-                        "@media screen and (min-width: 1920px)": {
-                            paddingLeft: "5.5rem",
-                            paddingRight: "5.5rem",
-                            paddingTop: "15.5vh",
-                        },
                     }}
                 >
                     <div
                         className={active === 2 ? "text-slide-left" : ""}
                         sx={{
-                            fontSize: "70px",
-                            lineHeight: "4.1rem",
-                            letterSpacing: "-1px",
+                            fontSize: ["70px", null, "100px"],
+                            lineHeight: ["4.1rem", null, "5.75rem"],
+                            letterSpacing: ["-1px", null, "-3px"],
                             fontFamily: "PlayfairDisplay",
-                            "@media screen and (min-width: 1920px)": {
-                                fontSize: "100px",
-                                lineHeight: "5.75rem",
-                                letterSpacing: "-3px",
-                            },
                         }}
                     >
                         <span sx={{ "--i": 0 }}>THERE ARE 5&nbsp;</span>
@@ -104,14 +88,10 @@ export function Scene3({ active, setActive }: Props) {
                         className={active === 2 ? "text-slide-left" : ""}
                         sx={{
                             fontFamily: "sans-serif",
-                            fontSize: "0.875rem",
-                            paddingTop: "3rem",
+                            fontSize: ["0.875rem", null, "1.25rem"],
+                            paddingTop: ["3rem", null, "4.2rem"],
                             letterSpacing: "-0.4px",
                             lineHeight: 1.8,
-                            "@media screen and (min-width: 1920px)": {
-                                fontSize: "1.25rem",
-                                paddingTop: "4.2rem",
-                            },
                         }}
                     >
                         <span sx={{ "--i": 3 }}>
@@ -152,18 +132,18 @@ export function Scene3({ active, setActive }: Props) {
                         sx={{
                             border: "1px solid black",
                             borderRadius: "50px",
-                            fontSize: "1.25rem",
-                            padding: "0.5rem 1.75rem", //py px
-                            "@media screen and (min-width: 1920px)": {
-                                padding: "0.75rem 2.75rem",
-                                fontSize: "27px",
-                            },
+                            fontSize: ["1.25rem", null, "27px"],
+                            padding: [
+                                "0.5rem 1.75rem",
+                                null,
+                                "0.75rem 2.75rem",
+                            ], //py px
                         }}
                     >
                         NEXT FACT
                     </div>
                 </Flex>
             </div>
-        </Html>
+        </CanvasHtmlWithThemeProvider>
     );
 }

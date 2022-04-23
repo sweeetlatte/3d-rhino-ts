@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
-import { Html } from "@react-three/drei";
+
+import CanvasHtmlWithThemeProvider from "../../containers/CanvasHtmlWithThemeProvider";
 
 import "./scene.css";
 
@@ -12,7 +13,7 @@ interface Props {
 
 export function Scene2({ display, setReverse, reverse, setActive }: Props) {
     return (
-        <Html>
+        <CanvasHtmlWithThemeProvider>
             <div className={`${display}`}>
                 <div
                     sx={{
@@ -20,16 +21,10 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
                         fontSize: "17px",
                         width: "max-content",
                         position: "absolute",
-                        left: "5.5vw",
+                        left: ["5.5vw", "-3vw", "-5vw"],
                         top: "-47vh",
                         fontFamily: "sans-serif",
                         animation: "transform 566ms ease-out both",
-                        "@media screen and (min-width: 1440px)": {
-                            left: "-3vw",
-                        },
-                        "@media screen and (min-width: 1920px)": {
-                            left: "-5vw",
-                        },
                     }}
                 >
                     Select a Point
@@ -44,18 +39,11 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
                         className="dot"
                         sx={{
                             "--delay": "900ms",
-                            top: "3.4rem",
-                            left: "-18.9rem",
+                            top: ["3.4rem", null, "5.25rem"],
+                            left: ["-18.9rem", null, "-26.5rem"],
                             "&:hover": {
                                 top: "2.75rem",
-                                left: "-19.75rem",
-                            },
-                            "@media screen and (min-width: 1920px)": {
-                                top: "5.25rem",
-                                left: "-26.5rem",
-                                "&:hover": {
-                                    left: "-27.75rem",
-                                },
+                                left: ["-19.75rem", null, "-27.75rem"],
                             },
                         }}
                     >
@@ -68,19 +56,11 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
                         className="dot"
                         sx={{
                             "--delay": "1066ms",
-                            top: "-7.75rem",
-                            left: "-9rem",
+                            top: ["-7.75rem", null, "-10.75rem"],
+                            left: ["-9rem", null, "-12.5rem"],
                             "&:hover": {
-                                top: "-8.5rem",
-                                left: "-9.75rem",
-                            },
-                            "@media screen and (min-width: 1920px)": {
-                                top: "-10.75rem",
-                                left: "-12.5rem",
-                                "&:hover": {
-                                    top: "-12rem",
-                                    left: "-13.75rem",
-                                },
+                                top: ["-8.5rem", null, "-12rem"],
+                                left: ["-9.75rem", null, "-13.75rem"],
                             },
                         }}
                     >
@@ -95,18 +75,11 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
                         className="dot"
                         sx={{
                             "--delay": "1232ms",
-                            top: "-1.75rem",
-                            left: "3.75rem",
+                            top: ["-1.75rem", null, "-2.25rem"],
+                            left: ["3.75rem", null, "5.25rem"],
                             "&:hover": {
-                                top: "-2.5rem",
+                                top: ["-2.5rem", null, "-3rem"],
                                 left: "3.25rem",
-                            },
-                            "@media screen and (min-width: 1920px)": {
-                                top: "-2.25rem",
-                                left: "5.25rem",
-                                "&:hover": {
-                                    top: "-3rem",
-                                },
                             },
                         }}
                     >
@@ -124,19 +97,11 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
                         className="dot"
                         sx={{
                             "--delay": "1398ms",
-                            top: "-14.5rem",
-                            left: "25.5rem",
+                            top: ["-14.5rem", null, "-19.75rem"],
+                            left: ["25.5rem", null, "36.25rem"],
                             "&:hover": {
-                                top: "-15rem",
-                                left: "25rem",
-                            },
-                            "@media screen and (min-width: 1920px)": {
-                                top: "-19.75rem",
-                                left: "36.25rem",
-                                "&:hover": {
-                                    top: "-21rem",
-                                    left: "35.5rem",
-                                },
+                                top: ["-15rem", null, "-21rem"],
+                                left: ["25rem", null, "35.5rem"],
                             },
                         }}
                     >
@@ -145,6 +110,6 @@ export function Scene2({ display, setReverse, reverse, setActive }: Props) {
                     <div className={`title-of-dot ${reverse}`}>Rhino Horn</div>
                 </div>
             </div>
-        </Html>
+        </CanvasHtmlWithThemeProvider>
     );
 }
