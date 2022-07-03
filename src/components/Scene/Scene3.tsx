@@ -12,16 +12,18 @@ interface Props {
 export function Scene3({ active, setActive }: Props) {
     return (
         <CanvasHtmlWithThemeProvider>
-            <div
+            <Flex
                 sx={{
-                    animation:
-                        active === 2 ? "slideLeft 966ms both 1500ms" : "",
-                    backgroundColor: "#A9B2A0",
-                    width: "43.9vw",
-                    height: "100vh",
+                    justifyContent: "space-between",
+                    flexDirection: "column",
                     position: "absolute",
                     left: "50vw",
                     top: "-50vh",
+                    width: "43.9vw",
+                    height: "100vh",
+                    animation:
+                        active === 2 ? "slideLeft 966ms both 1500ms" : "",
+                    backgroundColor: "#A9B2A0",
                     padding: ["1.5rem", null, "2.25rem 2rem"],
                 }}
             >
@@ -143,7 +145,7 @@ export function Scene3({ active, setActive }: Props) {
                         NEXT FACT
                     </div>
                 </Flex>
-            </div>
+            </Flex>
         </CanvasHtmlWithThemeProvider>
     );
 }
